@@ -23,6 +23,7 @@ function renderNews(news) {
     console.log(news[0]);
     const newsFeed = document.getElementById('newsFeed');
     const newslist = document.createElement("ul");
+    newslist.className = "newsList";
     
     for(let i=0; i < news.length; i++)
     {
@@ -35,11 +36,13 @@ function renderNews(news) {
     timestamp.className = "timestamp";
     const articleUrl = document.createElement("a");
     articleUrl.href = news[i].webUrl;
-    articleUrl.innerText = "read more";
+    articleUrl.innerText = "Read full article";
+    articleUrl.className = "newsLink";
 
     newsItm.appendChild(titleTag);
     newsItm.appendChild(timestamp);
     newsItm.appendChild(articleUrl);
+    newsItm.className = "newsCard";
     newslist.appendChild(newsItm);
     }
     newsFeed.appendChild(newslist);

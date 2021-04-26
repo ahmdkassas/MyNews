@@ -19,3 +19,27 @@ h5.timestamp {
     margin: 0px;
 }
 
+.divImg {
+    text-align: center;
+}
+
+.newsCard {
+    place-self: flex-end;
+    width: 80%;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 5%;
+    text-align: left;
+    background: #e6e6e6;
+    box-shadow: 1px 5px 5px;
+    font-size: large;
+    padding: 5px;
+}
+
+.newsLink {
+    font-size: 12px;
+}
+
+.newsList {
+    list-style-type: none;
+}
