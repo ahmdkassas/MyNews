@@ -1,0 +1,14 @@
+h4.newstitle {
+    font-size: 15px;
+    letter-spacing: -.25px;
+    font-weight: 700;
+}
+
+
+h5.timestamp {
+    font-size: 12px;
+    font-weight: normal;
+    color: #666;
+    margin-top: 3px;
+    margin-bottom: 6px;
+}

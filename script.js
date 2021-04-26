@@ -27,13 +27,18 @@ function renderNews(news) {
     for(let i=0; i < news.length; i++)
     {
     const newsItm = document.createElement("li");
-    const h1Tag = document.createElement("h2");
-    h1Tag.innerHTML = news[i].webTitle;
+    const titleTag = document.createElement("h4");
+    titleTag.innerHTML = news[i].webTitle;
+    titleTag.className = "newstitle";
+    const timestamp = document.createElement("h5");
+    timestamp.innerHTML = "Posted: " + news[i].webPublicationDate;
+    timestamp.className = "timestamp";
     const articleUrl = document.createElement("a");
     articleUrl.href = news[i].webUrl;
     articleUrl.innerText = "read more";
 
-    newsItm.appendChild(h1Tag);
+    newsItm.appendChild(titleTag);
+    newsItm.appendChild(timestamp);
     newsItm.appendChild(articleUrl);
     newslist.appendChild(newsItm);
     }
