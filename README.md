@@ -1,5 +1,5 @@
 # MyNews
-Breaking News application that displays the breaking news
+single page News application that displays the breaking news
 
 # User Storeies
 
