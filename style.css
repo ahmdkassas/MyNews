@@ -26,7 +26,7 @@ h5.timestamp {
 .newsCard {
     place-self: flex-end;
     width: 80%;
-    height: 100px;
+    height: 120px;
     border: 1px solid black;
     border-radius: 5%;
     text-align: left;
@@ -42,4 +42,21 @@ h5.timestamp {
 
 .newsList {
     list-style-type: none;
+}
+
+.activated-star{
+   color: rgba(255, 255, 0, 0.5); 
+}
+
+.star-glyph{
+    cursor: pointer;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.bookmark{
+    text-align: right;
+    font-size: small;
 }

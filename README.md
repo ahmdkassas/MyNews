@@ -1,15 +1,15 @@
 # MyNews
-Breaking News single page application that displays the breaking news
+Breaking News application that displays the breaking news
 
 # User Storeies
 
 # MVP
-- Users shoudl be able to see the most breaking news that happening right now.
+- Users should be able to see the current breaking news.
 
 # Stretch
 - Users should be able to search with a keyword in the news.
 - Users should be able to choose the category of the breaking news.
-
+- Users should be able to bookmark the favorite news article.
 
 # wireFrame
 

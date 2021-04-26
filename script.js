@@ -9,6 +9,7 @@ document.getElementById("btnSearch").addEventListener("click", function() {
 
 GetNews();
 
+
 function GetNews()
 {
     fetch(UrlAPI+APIKey)
@@ -16,6 +17,7 @@ function GetNews()
           return response.json();
     })
     .then(json => renderNews(json.response.results));
+    addToFav();
 }
 
 
@@ -24,7 +26,7 @@ function renderNews(news) {
     const newsFeed = document.getElementById('newsFeed');
     const newslist = document.createElement("ul");
     newslist.className = "newsList";
-    
+
     for(let i=0; i < news.length; i++)
     {
     const newsItm = document.createElement("li");
@@ -38,11 +40,22 @@ function renderNews(news) {
     articleUrl.href = news[i].webUrl;
     articleUrl.innerText = "Read full article";
     articleUrl.className = "newsLink";
+    
+   
+    const divFav = document.createElement("div");
+    const spanFav = document.createElement("span");
+    divFav.innerHTML = "Bookmark ";
+    divFav.className = "bookmark";
+    spanFav.className = "star-glyph";
+    spanFav.innerHTML = "☆";
+    divFav.appendChild(spanFav);
 
+    newsItm.appendChild(divFav);
     newsItm.appendChild(titleTag);
     newsItm.appendChild(timestamp);
     newsItm.appendChild(articleUrl);
-    newsItm.className = "newsCard";
+    newsItm.className = "newsCard"
+    
     newslist.appendChild(newsItm);
     }
     newsFeed.appendChild(newslist);
@@ -64,4 +77,48 @@ function renderNews(news) {
     while (newsFeed.firstChild) {
         newsFeed.removeChild(newsFeed.firstChild);
     }
+  }
+
+
+
+/*
+    Starring news
+*/
+
+
+
+
+
+function addToFav(){
+    const emptyStar = '☆';
+    
+    const glyphs = document.getElementsByClassName("star-glyph");
+    console.log(glyphs);
+    for (let i = 0; i < glyphs.length; i++) {
+      glyphs[i].innerHTML = emptyStar;
+      glyphs[i].classList.remove('activated-star');
+    }
+  
+    for (let i = 0; i < glyphs.length; i++) {
+  
+      glyphs[i].addEventListener('click', event => {
+  
+      const glyphSpan = event.target;
+      const glyphState = glyphSpan.classList.contains('activated-star');
+  
+      if (glyphState) {
+        glyphSpan.classList.remove('activated-star');
+        glyphSpan.innerHTML = emptyStar;
+      }
+      else {
+        PostServer(glyphSpan);
+      }
+    });
+  }
+}
+
+  function PostServer(glyphSpan) {
+    const fullStar = '★'
+    glyphSpan.innerHTML = fullStar;
+    glyphSpan.classList.add('activated-star');
   }
