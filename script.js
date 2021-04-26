@@ -31,7 +31,7 @@ function renderNews(news) {
     titleTag.innerHTML = news[i].webTitle;
     titleTag.className = "newstitle";
     const timestamp = document.createElement("h5");
-    timestamp.innerHTML = "Posted: " + news[i].webPublicationDate;
+    timestamp.innerHTML = news[i].sectionName + " || "+ "Posted: " + news[i].webPublicationDate;
     timestamp.className = "timestamp";
     const articleUrl = document.createElement("a");
     articleUrl.href = news[i].webUrl;
